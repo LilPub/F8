@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- thêm react vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+
+    <!-- thêm react dom vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+
+    <!-- thêm Babel vào website bằng cdn -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <!-- 
+        *Hook
+
+        1. React element types: string, function/class(ngoài type là string ra thì ta còn sử dụng function component(dùng rất nhiều),
+                                                                                                  class component)  
+            -Wrapper(chia ra thành các component)
+                -Header -> Header component
+                -Content -> Content component
+                -Footer -> Footer component
+
+        2. Biểu diễn đơn giản với JSX 
+     -->
+
+
+    <div id="app"></div>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // function component
+        // chia component Header ra ngoài bằng function
+        //Lưu ý: khi hàm sử dụng làm component thì tên hàm phải viết hoa chữ cái đầu(vì yêu cầu component phải viết hoa chữ cái đầu)
+        function Header(){
+            return (
+                <div className="header">header</div>
+            )
+        }
+
+
+        // class component
+        // từ việc extends từ component thằng class này được React element hiểu và support thành component
+        class Content extends React.Component {
+            //cần 1 method render()
+            render() {
+                return (
+                    <div className="content">content</div>
+                )
+            }
+
+        }
+
+
+        const app = (
+            <div className="wrapper">
+                {/* - Cú pháp JSX sẽ hỗ trợ biến 1 function trở thành cú pháp như 1 thẻ tag 
+                    - Khi mà thẻ tag không có children thì ta có thể viết <Header></Header> -> <Header />
+                    */}
+                <Header></Header>
+                <Content></Content>
+                <div className="footer">footer</div>    
+            </div>
+        )
+
+        // ReactDOM.render(app, document.getElementById("app"))
+
+
+
+
+        //ví dụ
+        //PostItem.js
+        function PostItem(){
+            return (
+                <div className="post-item" style={{marginLeft: '3px'}}>
+                    <img src="data:image/jpeg;base64,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" alt="Đây là hình ảnh" />
+                    <h2 className="post-title">React element types</h2>
+                    <p className="post-desc">Bạn có kiến thức ngôn ngữ lập trình</p>
+                    <p className="post-published">Một ngày trước</p>
+                </div>      
+            )
+        }
+
+        //App.js
+        function App(){
+            return (
+                <div className="posts-list" style={{display: 'flex'}}>
+                    <PostItem />
+                    <PostItem />
+                    <PostItem />
+                    <PostItem />
+                    <PostItem />
+                </div> 
+            )
+        }
+
+        //index.js
+        ReactDOM.render(<App />/*types ở đây là function component*/, document.querySelector('#root'))
+
+
+
+    </script>
+</body>
+</html>

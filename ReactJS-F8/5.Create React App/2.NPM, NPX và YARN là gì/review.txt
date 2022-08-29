@@ -1,0 +1,53 @@
+-NPM
+    -Project scope(cài ở phạm vi dự án: cài vào dự án sử dụng)
+        - để cài thư viện: npm install react react-dom --save (mỗi thư viện luôn cách nhau 1 khoảng trắng ' ', lưu vào dependencies)
+                        shorthand: npm i react react-dom (từ phiên bản >=5 không phải --save)
+
+                        : npm install --save-dev react react-dom (lưu vào devDependencies)
+                        shorthand: npm i -D react react-dom
+
+        - để gỡ thư viện: npm uninstall react react-dom
+
+    -Global scope(cài ở phạm vi toàn cầu: cài vào máy tính)
+        -sử dụng khi dự án không bị phụ thuộc vào thư viện đó(trong code không phải import thư viện)
+        -ví dụ thư viện create-react-app
+            npm i --global create-react-app
+            shorthand: npm i -g create-react-app
+            (cài vào thư mục user (cái account máy mà cá nhân login))
+
+            để gỡ: npm uninstall -g create-react-app 
+
+-NPX(khi cài Node JS nó sẽ cài kèm thằng NPM, NPX lại được cài kèm thằng NPM => cài Node có cả NPM và NPX)
+    (hỗ trợ thực thi những thư viện cung cấp file bin (như là thằng create-react-app))
+
+    -Tại sao dùng NPX?
+        -không phải cài các thư viện lên máy
+
+    -Gặp lỗi khi: npx create-react-app tiktok(lỗi tên user máy tính cá nhân)
+        -lúc này ta sẽ phải cài đặt ở phạm vi toàn cầu
+
+-YARN & NPM
+    -đều là package manager(quản lý gói của Node, quản lý thư viện viết bởi javascript)
+
+    -NPM 
+        - cung cấp 1 website  để quản lý thư viện(đó là nmpjs.com)
+        - là một kho lưu trữ thư viện (lưu lên registry)
+        - là một CLI(command-line interface) là cách giao tiếp với dòng lệnh, sai khiến máy tính làm theo cái gì đấy
+        - vì nó là một CLI nên sẽ hỗ trợ npm tương tác qua terminal 
+
+    -YARN
+
+    -dùng npm chúng ta sẽ có 1 file package-lock.json
+    -dùng yarn sẽ có file yarn.lock
+    => 2 file trên đều để quản lý tất cả dự án cài trên máy chúng ta
+
+    -npm khi cài nhiều thư viện nó sẽ cài tuần tự 
+    -yarn khi cài  nhiều thư viện nó cài song song được
+
+    -npm cơ chế cache không tốt như yarn
+
+-YARN install
+    npm i -g yarn
+    
+-Lưu ý:
+    -Luôn bật development server (npm start || yarn start)

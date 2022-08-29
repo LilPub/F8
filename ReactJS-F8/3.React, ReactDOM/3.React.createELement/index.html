@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+</head>
+<body>
+    <!-- 
+        1. React.createElement() -> React element
+        2. so sánh với document.createElement() -> DOM element
+     -->
+
+     <script>
+        //Ví dụ 1
+
+        //DOM
+        const DOM = document.createElement("h1")
+        DOM.title = 'title'
+        DOM.className = 'header'
+        DOM.innerText = 'DOM element'
+        document.body.appendChild(DOM)
+
+
+        //React
+        // đối số thứ nhất là TYPE
+        // đối số thứ hai là Object với các Property
+        // đối số thứ ba là children(những thứ nằm trong thẻ ta vừa tạo ra)
+        // React.createElement(type, props, children ... children)
+        const REACT = React.createElement("h1"/* đối số thứ nhất là TYPE*/, 
+        {
+            title: 'title',
+            className: 'header',
+        }/*đối số thứ 2 là OBJECT với các property*/,
+        'children'/*(Kiểu như innerText ~ children) nhưng nó là bất cứ kiểu dữ liệu gì chứ không nhất thiết là chuỗi*/)
+
+
+
+        //Ví dụ 2
+        //DOM
+        const ulDOM = document.createElement("ul")
+
+        const li1DOM = document.createElement("li")
+        li1DOM.innerText = 'JavaScript'
+
+        const li2DOM = document.createElement("li")
+        li2DOM.innerText = 'PHP'
+
+        ulDOM.appendChild(li1DOM)
+        ulDOM.appendChild(li2DOM)
+
+        document.body.appendChild(ulDOM)
+
+
+        //React
+        const ulReact = React.createElement(
+            'ul',
+            null,
+            React.createElement('li',null,'JavaScript'),
+            React.createElement('li',null,'PHP'),
+        )
+
+
+
+     </script>
+</body>
+</html>

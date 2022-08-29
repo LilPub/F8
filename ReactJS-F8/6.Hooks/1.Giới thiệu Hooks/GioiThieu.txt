@@ -1,0 +1,2 @@
+-Hooks thực chất là các methold, function được viết sẵn, được cung cấp bởi thư viện ReactJS 
+    - mỗi 1 methold hay function này đều có 1 tính năng, trường hợp cụ thể để có thể sử dụng

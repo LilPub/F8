@@ -1,0 +1,19 @@
+SPA(Single-Page Application): là ứng dụng trang đơn
+- ReactJS là 1 trong những thư viện tạo ra SPA
+- Không yêu cầu tải lại trang trong quá trình sử dụng
+- Được cho là cách tiếp cận hiện đại hơn
+- Nhanh hơn khi sử dụng
++ Phần lớn tài nguyên được ytair trong lần đầu
++ Trang chỉ thêm dữ liệu mới khi cần
+- Dễ dàng tái sử dụng code (component)
+- Phụ thuộc hoàn toàn vào JavaScript
+
+MPA(Multi-Page Application): là ứng dụng nhiều trang
+- Tải lại trang trong quá trình sử dụng(click vào đường link, chuyển sang, ...)
+- Là cách tiếp cận cổ điển hơn
+- Chậm hơn khi sử dụng
++ Luôn tải lại toàn bộ trang khi truy cập và chuyển hướng
+- Bóc tách FE & BE
++ Chia team phát triển song song
++ Phát triển mobile app dễ dàng
+- Có thể không cần JavaScript

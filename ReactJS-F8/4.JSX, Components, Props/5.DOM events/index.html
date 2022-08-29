@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- thêm react vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+
+    <!-- thêm react dom vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+
+    <!-- thêm Babel vào website bằng cdn -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const courses = [
+        {
+          "id": 7,
+          "title": "Kiến Thức Nhập Môn IT",
+          "slug": "lessons-for-newbie",
+          "description": "Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.",
+          "image": "courses/7.png",
+          "icon": "courses/7/6200b81f52d83.png",
+          "video_type": "youtube",
+          "video": "M62l1xA5Eu8",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 78330,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": false,
+          "user_progress": 0,
+          "last_completed_at": null,
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/7.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png",
+          "video_url": "https://www.youtube.com/watch?v=M62l1xA5Eu8",
+          "landing_page_url": "/courses/lessons-for-newbie",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        },
+        {
+          "id": 2,
+          "title": "HTML, CSS từ Zero đến Hero",
+          "slug": "html-css",
+          "description": "Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+          "image": "courses/2.png",
+          "icon": "courses/2/6200aecea81de.png",
+          "video_type": "youtube",
+          "video": "R6plN3FvzFY",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 121746,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": true,
+          "user_progress": 77,
+          "last_completed_at": "2022-05-08 15:08:09",
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/2.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/2/6200aecea81de.png",
+          "video_url": "https://www.youtube.com/watch?v=R6plN3FvzFY",
+          "landing_page_url": "/courses/html-css",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Responsive Với Grid System",
+          "slug": "responsive-web-design",
+          "description": "Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.",
+          "image": "courses/3.png",
+          "icon": "courses/3/6200afe1240bb.png",
+          "video_type": "youtube",
+          "video": "uz5LIP85J5Y",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 27691,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": false,
+          "user_progress": 0,
+          "last_completed_at": null,
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/3.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/3/6200afe1240bb.png",
+          "video_url": "https://www.youtube.com/watch?v=uz5LIP85J5Y",
+          "landing_page_url": "/courses/responsive-web-design",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Lập Trình JavaScript Cơ Bản",
+          "slug": "javascript-co-ban",
+          "description": "Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học.",
+          "image": "courses/1.png",
+          "icon": "courses/1/6200ad9d8a2d8.png",
+          "video_type": "youtube",
+          "video": "0SJE9dYdpps",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 78063,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": true,
+          "user_progress": 92,
+          "last_completed_at": "2022-08-05 18:57:33",
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/1.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/1/6200ad9d8a2d8.png",
+          "video_url": "https://www.youtube.com/watch?v=0SJE9dYdpps",
+          "landing_page_url": "/courses/javascript-co-ban",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Lập Trình JavaScript Nâng Cao",
+          "slug": "javascript-nang-cao",
+          "description": "Hiểu sâu hơn về cách Javascript hoạt động, tìm hiểu về IIFE, closure, reference types, this keyword, bind, call, apply, prototype, ...",
+          "image": "courses/12.png",
+          "icon": "courses/12/6200af2620118.png",
+          "video_type": "youtube",
+          "video": "MGhw6XliFgo",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 19798,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": true,
+          "user_progress": 100,
+          "last_completed_at": "2022-08-19 02:31:53",
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/12.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/12/6200af2620118.png",
+          "video_url": "https://www.youtube.com/watch?v=MGhw6XliFgo",
+          "landing_page_url": "/courses/javascript-nang-cao",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        },
+        {
+          "id": 14,
+          "title": "Làm việc với Terminal & Ubuntu",
+          "slug": "windows-terminal-wsl",
+          "description": "Sở hữu một Terminal hiện đại, mạnh mẽ trong tùy biến và học cách làm việc với Ubuntu là một bước quan trọng trên con đường trở thành một Web Developer.",
+          "image": "courses/14/624faac11d109.png",
+          "icon": "courses/14/624faac2ee23d.png",
+          "video_type": "youtube",
+          "video": "7ppRSaGT1uw",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 6336,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": false,
+          "user_progress": 0,
+          "last_completed_at": null,
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/14/624faac11d109.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/14/624faac2ee23d.png",
+          "video_url": "https://www.youtube.com/watch?v=7ppRSaGT1uw",
+          "landing_page_url": "/courses/windows-terminal-wsl",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Xây Dựng Website với ReactJS",
+          "slug": "reactjs",
+          "description": "Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+          "image": "courses/13/13.png",
+          "icon": "courses/13/6200af9262b30.png",
+          "video_type": "youtube",
+          "video": "x0fSBAgBrOQ",
+          "old_price": 0,
+          "price": 0,
+          "pre_order_price": 0,
+          "students_count": 30964,
+          "is_pro": false,
+          "is_coming_soon": false,
+          "is_selling": false,
+          "published_at": "2020-02-10T14:23:13.000000Z",
+          "is_registered": true,
+          "user_progress": 24,
+          "last_completed_at": "2022-08-22 00:51:10",
+          "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/13/13.png",
+          "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/13/6200af9262b30.png",
+          "video_url": "https://www.youtube.com/watch?v=x0fSBAgBrOQ",
+          "landing_page_url": "/courses/reactjs",
+          "is_pre_order": false,
+          "is_published": true,
+          "related_courses": [
+            
+          ]
+        }
+      ]
+        function View(){
+            return (
+                <div>
+                    <button onClick={()=>alert('Oke')}/*trong React DOM event sẽ được đổi cách viết thành camelCase(onclick => onClick)*/>
+                        Click me!
+                    </button>    
+                </div>
+            )
+        }
+
+
+        
+        // //Bài tập về nhà
+        function Item({course}){
+            return (
+                <React.Fragment>
+                    <ul>
+                        <li>{course.title}</li>    
+                        <li>{course.description}</li>    
+                    </ul>
+                    <button onClick={() => alert(course.title)}>Course name</button>
+                    <br />
+                </React.Fragment>
+            )
+        }
+
+        function Post(){
+            return (
+                <div>
+                    {courses.map(course => <Item course={course}/>)}
+                </div>
+            )
+        }
+
+        // ReactDOM.render(<Post />, document.getElementById("root"))
+
+        //cách làm khác (Bài về nhà)
+        function Item({course, onClick}){
+          return (
+                <React.Fragment>
+                    <ul>
+                        <li>{course.title}</li>    
+                        <li>{course.description}</li>    
+                    </ul>
+                    <button onClick={() => onClick(course)/*onClick ở đây đã được gọi giống như onClick()*/}>Course name</button>
+                    <br />
+                </React.Fragment>
+            )
+        }
+
+        function Post(){
+          const handleClick = (course) => {
+            alert(course.title)
+          }
+            return (
+                <div>
+                    {courses.map(course => <Item 
+                                              course={course}
+                                              onClick={handleClick}
+                                            />)}
+                </div>
+            )
+        }
+
+        // ReactDOM.render(<Post />, document.getElementById("root"))
+
+
+
+
+        //Chọn component trong 1 object
+        const Form = {
+          Input(){
+            return (
+              <input type="text" />
+            )
+          },
+
+          CheckBox(){
+            return (
+              <input type="checkbox" />
+            )
+          }
+        }
+
+        function App(){
+          //Tạo ra biến type để linh hoạt các trường hợp hơn type có thể là Input, CheckBox, Radio,...
+          const type = 'CheckBox'
+          const Component = Form[type]
+
+          return (
+            <div>
+              <Form.Input />
+              <Component />  
+            </div>
+          )
+        }
+
+        // ReactDOM.render(<App />, document.getElementById("root"))
+
+        //ví dụ tình huống vừa muốn chuyển trang vừa muốn thực hiện sự kiện onclick
+        function Item({title, href, onClick}){
+          const props = {}
+          let Component = 'button'
+          if(href){
+            Component = 'a'
+            props.href = href
+          }
+
+          if(onClick){
+            props.onClick = onClick
+          }
+
+          props.className = 'content'
+
+          return (
+            <Component {...props}>{title}</Component>
+          )
+        }
+
+        function App(){
+          return (
+            <Item 
+              title="Click me!"
+              href = 'https://www.facebook.com/'
+              onClick = {() => (alert('Tạm Biệt'))}
+            />
+          )
+        }
+
+        ReactDOM.render(<App />, document.getElementById("root"))
+
+
+        //Boolearn, Null, Undefined không được render
+        //Kết hợp toán tử logic để render theo điều kiện
+        
+
+        //-Props trong JSX
+            //  <YourComponent
+                  //propName1="String literals"
+                  //propName2={expression}
+            //  />
+
+        //ví dụ
+        function Button({title1, title2}){
+         return (
+          <div>
+            <button>{title1}</button> 
+            <button>{title2}</button> 
+          </div>
+         )
+        }
+
+        function App(){
+          const title2 = 'title2'
+          return (
+            <Button title1='title1' //string literals
+                    title2= {title2} //{expression}
+            />
+          )
+        }
+
+
+        //props default to 'true'
+        function App() {
+          return (
+            <Button primary /*Mặc định ở đây là true = primary={true}*//>
+          )
+        }
+
+
+        // Spread/Rest props
+        function Input({lable,...propsTitle/*đây là rest*/}){
+          return (
+            <div>
+              <lable>{lable}</lable>
+              <input {...propsTitle}/*đây là spread*/ />
+            </div>
+          )
+        }
+
+        function App(){
+          return (
+            <Input
+              lable="FullName"
+              type = 'text'
+              placeholder="Enter name..."
+            />
+          )
+        }
+
+
+        //Children props
+        function Button({children}){
+         return (
+          <div>
+            <button>{children}</button> 
+          </div>
+         )
+        }
+
+        function App(){
+          return (
+            <Button>Click me!{/*đây là children(có cả children string literals và children expression*/}</Button>
+          )
+        }
+
+
+        //Render props
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- thêm react vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+
+    <!-- thêm react dom vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+
+    <!-- thêm Babel vào website bằng cdn -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    
+    <!-- 
+        JSX -> JavaScript XML(HTML là cú pháp mở rộng của XML)
+        -JSX ra đời để hỗ trợ việc viết HTML,XML trong JavaScript
+
+        1. Luôn dùng React.createElement() ?  Vấn đề ?
+        2. JSX ?  Live demo: https://bit.ly/2VOIMN7
+        3. JSX không phải là HTML, 
+            Cần có JavaScript, Babel để dùng JSX
+            (Babel) là một thư viện trong JavaScript, dùng để phân tích cú pháp, chuyển đổi cú pháp
+        4. JSX và React-DOM
+    -->
+
+
+    <!-- 
+        ví dụ JSX
+        const text = NodeJS
+        const ul = <ul>
+                    <li>JavaScript</li>
+                    <li>{text}</li>
+                   </ul>
+
+        có 1 cách duy nhất có thể viết JavaScript trong JSX là viết JavaScript trong {} như ở ví dụ trên
+    -->
+    <div id="root"></div>
+
+    <script type="text/babel"> /* type="text/babel sẽ không thực thi JavaScript, 
+                                và khi nhúng babel vào nó sẽ đi tìm đoạn textcontent của type="text/babel để chạy*/
+        //ví dụ
+        // const course = 'ReactJS'
+        const Courses = [
+            { name: 'PHP'},
+            { name: 'NodeJS'},
+            { name: 'VueJS'}
+        ]
+
+        const ul = <ul title="title" className="UL" style={{color: 'green'}}>
+                { /*thuộc tính style trong JSX phải là Object*/ }
+                    {Courses.map( course => <li>{course.name}</li>)}
+                   </ul>
+                   //vì children có nhiều phần tử nên trả ra mảng ở trên là hợp lệ
+
+        ReactDOM.render(ul, document.querySelector('#root'))
+
+
+    </script>
+
+</body>
+</html>

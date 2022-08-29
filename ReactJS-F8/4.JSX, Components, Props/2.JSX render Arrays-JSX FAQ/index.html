@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- thêm react vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+
+    <!-- thêm react dom vào website bằng cdn -->
+    <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+
+    <!-- thêm Babel vào website bằng cdn -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+        //ví dụ bài về nhà buổi trước
+        // const course = 'ReactJS'
+        const Courses = [
+            { name: 'PHP'},
+            { name: 'NodeJS'},
+            { name: 'VueJS'}
+        ]
+
+        const ul = <ul title="title" className="UL" style={{color: 'green'}}>
+                { /*thuộc tính style trong JSX phải là Object*/ }
+                    {Courses.map( course => <li>{course.name}</li>)}
+                   </ul>
+                   //vì children có nhiều phần tử nên trả ra mảng ở trên là hợp lệ
+
+        ReactDOM.render(ul, document.querySelector('#root'))
+
+
+
+        
+
+        // const Header =  <h1>Header 1</h1>
+        //                 <h2>Header 2</h2>
+        // Như này sẽ bị lỗi vì cần có 1 thẻ bao 2 thẻ
+        // Nhưng khi chúng ta thêm 1 thẻ bao cho nó sẽ làm thừa mất 1 thẻ cha không cần thiết
+        // dưới đây là cánh khắc phục                    
+                       
+        const Header = <React.Fragment>
+                        <h1>Header 1</h1>
+                        <h2>Header 2</h2>
+                       </React.Fragment>
+        // React nó hỗ trợ 1 component là Fragment
+        // React.Fragment đóng vai trò như thằng cha ôm 2 thằng h1 h2 bên trong
+        // sẽ không sinh ra thẻ bao 2 thằng h1 h2
+
+        ReactDOM.render(Header, document.querySelector('#root'))
+
+    </script>
+</body>
+</html>

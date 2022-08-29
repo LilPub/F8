@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. document.createElement()
+    2. document.body.appendChild()
+    3. console.dir()
+    4. innerText, id, className, style -->
+    <div id="root"></div>
+
+    <script>
+        const getRoot = document.querySelector('#root');
+
+        //1. document.createElement() : method tạo element
+        const newElement = document.createElement('h1')
+        //Thêm id cho newElement
+        newElement.id = 'header'
+
+        //Thêm class cho newElement
+        newElement.className = 'header'
+        //thêm nhiều class
+        newElement.className = 'header active'
+        //Thêm style cho newElement
+        newElement.style.color = 'green'
+        //thêm nhiều style
+        newElement.style = 'color:green; text-align:center'
+        //thêm nhiều style(kiểu như hợp object css vào newElement.style)
+        Object.assign(newElement.style,{
+            color: 'green', 
+            ['text-align']: 'center',
+            backgroundColor: '#ccc'
+        })
+
+        //Thêm innerText cho newElement
+        newElement.innerText = 'new element'
+
+        //sử dụng setAttribute để setAttribute cho element
+        // newElement.setAttribute('class', 'header')
+        // newElement.setAttribute('id', 'header')
+        // newElement.setAttribute('data-index', 'index-1')
+
+        //2. document.body.appendChild() : Thêm thằng con vào
+        // document.body.appendChild(newElement)//thêm thằng newElement vào body
+
+        getRoot.appendChild(newElement)//thêm thằng newElement vào div#root
+    </script>
+</body>
+</html>
