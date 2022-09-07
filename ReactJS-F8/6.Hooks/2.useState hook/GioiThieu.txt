@@ -1,0 +1,30 @@
+useState
+- state là trạng thái
+- useState là trạng thái của dữ liệu
+- giúp cho việc đơn giản hóa trạng thái của dữ liệu ra giao diện người dùng -> dữ liệu thay đổi gì thì giao diện thay đổi đó
+
+* dùng khi nào ?
+-Khi muốn dữ liệu thay đổi thì giao diện tự động được cập nhật (render lại theo dữ liệu)
+
+* cách sử dụng
+import { useState } from 'react'
+
+function component(){
+    const [state, setState] = useState(initState)
+    //nhận giá trị đầu vào là initState(giá trị khởi tạo, chỉ dùng 1 lần cho lần đầu)
+    //return ra cái mảng gồm 2 phần tử
+    //phần tử đầu tiên: lần đầu tiên nó lấy giá trị khởi tạo và đưa cho thằng state
+    //phần tử thứ hai: nó là 1 cái hàm và được sử dụng để set lại state
+
+    ...
+}
+...
+
+*Lưu ý
+-component được render lại sau khi 'setState'
+-Initial State chỉ được dùng cho lần đầu
+-Set State với callBack ?
+-Initial State với callBack ?
+-Set State là thay thế state bằng giá trị mới
+
+//ví dụ(bên workspace)

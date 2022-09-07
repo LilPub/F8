@@ -1,0 +1,6 @@
+useEffect(callBack,[])
+-đối số thứ nhất là 1 callBack
+-đối số thứ hai là mảng chứa các sự phụ thuộc về mặt dữ liệu (dependencies)
+-đối số thứ nhất là bắt buộc, đối số thứ hai là không bắt buộc
+-callback luôn được gọi sau khi component mounted
+-cleanup function luôn được gọi trước khi component unmounted

@@ -1,0 +1,4 @@
+-Thực hành bên workspace
+
+-Mounted : gắn vào
+-Unmounted : gỡ ra
